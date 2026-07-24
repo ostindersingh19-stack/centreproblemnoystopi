@@ -1,0 +1,5 @@
+# macOS
+.DS_Store
+
+# Все .DS_Store в любых папках
+**/.DS_Store
