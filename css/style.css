@@ -214,7 +214,7 @@ p {
 
 .socials i {
 
-    font-size:30px;
+    font-size: 35px;
 
 }
 
@@ -821,41 +821,7 @@ display:block;
     color:#1677d2;
 
 }
-@media (max-width:900px){
 
-.header-top{
-
-    flex-direction:column;
-
-    gap:25px;
-
-}
-
-.header-info{
-
-    flex-direction:column;
-
-    gap:18px;
-
-    text-align:center;
-
-}
-
-.nav{
-
-    flex-wrap:wrap;
-
-    gap:18px;
-
-}
-
-.logo{
-
-    align-items:center;
-
-}
-
-}
 
 
 .promo {
@@ -1031,10 +997,11 @@ display:block;
 
 .price-section{
 
-    max-width:760px;      /* было 850 */
+    max-width:760px;
     margin:60px auto;
 
 }
+
 
 .price-section h2{
 
@@ -1044,6 +1011,7 @@ display:block;
     color:#222;
 
 }
+
 
 /* Карточка */
 
@@ -1063,6 +1031,8 @@ display:block;
 
 }
 
+
+
 /* Заголовок */
 
 .accordion-btn{
@@ -1081,9 +1051,9 @@ display:block;
 
     align-items:center;
 
-    padding:15px 20px;     /* было 18 22 */
+    padding:15px 20px;
 
-    font-size:17px;        /* было 18 */
+    font-size:17px;
 
     font-weight:600;
 
@@ -1095,11 +1065,13 @@ display:block;
 
 }
 
+
 .accordion-btn:hover{
 
     background:#f8fbff;
 
 }
+
 
 .accordion-btn span{
 
@@ -1111,11 +1083,14 @@ display:block;
 
 }
 
+
 .accordion.active .accordion-btn span{
 
     transform:rotate(180deg);
 
 }
+
+
 
 /* Контент */
 
@@ -1129,7 +1104,9 @@ display:block;
 
 }
 
-/* Строка */
+
+
+/* Строка услуги */
 
 .price-item{
 
@@ -1137,9 +1114,11 @@ display:block;
 
     justify-content:space-between;
 
-    align-items:center;
+    align-items:flex-start;
 
-    padding:13px 20px;     /* было 15 24 */
+    gap:20px;
+
+    padding:15px 20px;
 
     border-top:1px solid #f0f0f0;
 
@@ -1147,11 +1126,49 @@ display:block;
 
 }
 
-.price-item span{
 
-    color:#555;
+
+/* Левая часть */
+
+.price-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5px;
+
+    flex:1;
 
 }
+
+
+
+.price-item span{
+
+    color:#222;
+
+    font-weight:600;
+
+}
+
+
+
+.price-item p{
+
+    margin:0;
+
+    color:#666;
+
+    font-size:14px;
+
+    line-height:1.45;
+
+}
+
+
+
+/* Цена */
 
 .price-item strong{
 
@@ -1161,37 +1178,61 @@ display:block;
 
     font-weight:700;
 
+    white-space:nowrap;
+
 }
+
+
+
+/* Заголовки внутри прайса */
+
 .price-title{
+
     margin-bottom:10px;
+
+    margin-top:40px;
+
 }
+
+
+
+/* Акции */
+
 .sales{
 
     max-width:1100px;
+
     margin:60px auto;
 
+    padding:20px 20px 70px;
+
 }
+
+
 
 .sales-list{
 
     display:grid;
+
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
     gap:25px;
 
 }
 
+
+
 .sale-card{
 
     background:#fff;
-    padding: 30px;
+
+    padding:30px;
+
     border-radius:18px;
+
     box-shadow:0 8px 25px rgba(0,0,0,.08);
+
     transition:.3s;
-
-}
-.sales{
-
-    padding:20px 20px 70px;
 
 }
 
@@ -1201,18 +1242,86 @@ display:block;
 
 }
 
+
+
 .sale-card h3{
 
     color:#1677d2;
+
     margin-bottom:15px;
+
     font-size:22px;
 
 }
 
+
+
 .sale-card p{
 
     color:#555;
+
     line-height:1.6;
+
+}
+
+
+
+/* Мобильная версия */
+
+@media(max-width:600px){
+
+
+    .price-section{
+
+        margin:40px auto;
+
+        padding:0 15px;
+
+    }
+
+
+    .price-section h2{
+
+        font-size:28px;
+
+    }
+
+
+    .accordion-btn{
+
+        padding:14px 16px;
+
+        font-size:16px;
+
+    }
+
+
+    .price-item{
+
+        flex-direction:column;
+
+        gap:10px;
+
+        padding:15px 16px;
+
+    }
+
+
+    .price-item strong{
+
+        align-self:flex-end;
+
+        font-size:16px;
+
+    }
+
+
+    .price-item p{
+
+        font-size:13px;
+
+    }
+
 
 }
 
@@ -1461,3 +1570,634 @@ display:block;
     font-size: 15px;
 
 }
+/* ==================================================
+   GLOBAL MOBILE ADAPTATION
+================================================== */
+
+
+/* Планшеты */
+
+@media (max-width: 992px){
+
+
+    section{
+
+        padding:50px 20px;
+
+    }
+
+
+    .container{
+
+        padding:0 15px;
+
+    }
+
+
+
+    /* HEADER */
+
+    .header-top{
+
+        padding:15px 0;
+
+    }
+
+
+    .header-info{
+
+        gap:20px;
+
+    }
+
+
+    .logo img{
+
+        width:70px;
+
+        height:70px;
+
+        left:0;
+
+    }
+
+
+    .logo-text span{
+
+        font-size:24px;
+
+    }
+
+
+
+    /* HERO */
+
+    .hero{
+
+        padding:60px 20px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:38px;
+
+    }
+
+
+
+    /* SERVICES */
+
+
+    .services-list{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+
+    /* REVIEWS */
+
+
+    .reviews-list{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+
+    /* CONTACTS */
+
+
+    .contacts-wrapper{
+
+        flex-direction:column;
+
+    }
+
+
+}
+
+
+
+/* Телефоны */
+
+@media (max-width:768px){
+
+
+    body{
+
+        font-size:15px;
+
+    }
+
+
+    section{
+
+        padding:40px 15px;
+
+    }
+
+
+    h2{
+
+        font-size:26px;
+
+        margin-bottom:25px;
+
+    }
+
+
+
+    /* =================
+       HEADER
+    ================= */
+
+
+    .header{
+
+        position:relative;
+
+    }
+
+
+    .header-top{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:15px;
+
+    }
+
+
+    .logo{
+
+        align-items:center;
+
+    }
+
+
+    .logo a{
+
+        justify-content:center;
+
+    }
+
+
+    .logo img{
+
+        width:65px;
+
+        height:65px;
+
+    }
+
+
+    .logo-text span{
+
+        font-size:22px;
+
+    }
+
+
+    .logo-text small{
+
+        font-size:12px;
+
+    }
+
+
+
+    .header-info{
+
+        flex-direction:column;
+
+        gap:12px;
+
+        width:100%;
+
+    }
+
+
+    .btn-header{
+
+        width:100%;
+
+        text-align:center;
+
+        padding:12px;
+
+    }
+
+
+
+    /* NAV */
+
+
+    .nav{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:15px;
+
+        padding:15px 0;
+
+    }
+
+
+    .nav a{
+
+        font-size:15px;
+
+    }
+
+
+
+    /* =================
+       HERO
+    ================= */
+
+
+    .hero{
+
+        padding:45px 15px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:30px;
+
+        line-height:1.25;
+
+    }
+
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+
+    .btn{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+
+
+    /* =================
+       SERVICES
+    ================= */
+
+
+    .services-list{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+
+    .service-card{
+
+        padding:18px;
+
+    }
+
+
+    .service-image{
+
+        height:160px;
+
+    }
+
+
+
+    /* =================
+       WHY
+    ================= */
+
+
+    .why-list{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .why-card{
+
+        padding:20px;
+
+    }
+
+
+
+    /* =================
+       REVIEWS
+    ================= */
+
+
+    .reviews-list{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .review-card{
+
+        padding:20px;
+
+    }
+
+
+
+    /* =================
+       CTA
+    ================= */
+
+
+    .cta-form{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+
+    .cta-form input,
+    .cta-form button{
+
+        width:100%;
+
+    }
+
+
+
+    /* =================
+       SERVICE PAGES
+    ================= */
+
+
+    .service-page{
+
+        padding:0;
+
+    }
+
+
+    .service-page h1{
+
+        font-size:30px;
+
+        line-height:1.3;
+
+    }
+
+
+    .service-intro{
+
+        font-size:16px;
+
+    }
+
+
+    .service-page h2{
+
+        font-size:24px;
+
+    }
+
+
+    .benefits-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .benefit-item,
+    .faq-item{
+
+        padding:20px;
+
+    }
+
+
+
+    /* =================
+       PRICE
+    ================= */
+
+
+    .price-section{
+
+        margin:40px auto;
+
+        padding:0 10px;
+
+    }
+
+
+    .price-section h2{
+
+        font-size:26px;
+
+    }
+
+
+    .accordion-btn{
+
+        padding:14px;
+
+        font-size:15px;
+
+    }
+
+
+    .price-item{
+
+        flex-direction:column;
+
+        gap:10px;
+
+        padding:14px;
+
+    }
+
+
+    .price-item strong{
+
+        align-self:flex-end;
+
+    }
+
+
+
+    /* =================
+       CONTACTS
+    ================= */
+
+
+    .contacts-section{
+
+        padding:40px 15px;
+
+    }
+
+
+    .contacts-info{
+
+        width:100%;
+
+    }
+
+
+    .contact-card{
+
+        padding:20px;
+
+    }
+
+
+    .contacts-map iframe{
+
+        min-height:300px;
+
+    }
+
+
+
+    /* =================
+       PROMO
+    ================= */
+
+
+    .promo{
+
+        padding:15px;
+
+    }
+
+
+    .promo-card{
+
+        padding:25px 15px;
+
+    }
+
+
+    .promo-card h2{
+
+        font-size:24px;
+
+    }
+
+
+
+    /* =================
+       BREADCRUMBS
+    ================= */
+
+
+    .breadcrumbs{
+
+        font-size:13px;
+
+        margin:15px 0;
+
+    }
+
+
+}
+
+
+
+/* Маленькие телефоны */
+
+@media(max-width:480px){
+
+
+    .hero h1{
+
+        font-size:26px;
+
+    }
+
+
+    h2{
+
+        font-size:23px;
+
+    }
+
+
+    .logo-text span{
+
+        font-size:20px;
+
+    }
+
+
+    .socials a{
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+
+    .socials i{
+
+        font-size:28px;
+
+    }
+
+
+    .service-card h3{
+
+        font-size:18px;
+
+    }
+
+
+    .service-card p{
+
+        font-size:14px;
+
+    }
+
+
+    .page-intro h1{
+
+        font-size:28px;
+
+    }
+
+
+    .page-intro p{
+
+        font-size:16px;
+
+    }
+
+
+}
+
