@@ -46,6 +46,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .nav a { position: relative; }
 .nav a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -5px; height: 1px; background: currentColor; transition: right var(--transition); }
 .nav a:hover::after, .nav a:focus-visible::after { right: 0; }
+.menu-toggle { display: none; width: 100%; align-items: center; justify-content: center; gap: 8px; min-height: 48px; border: 0; border-top: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text); font: inherit; font-weight: 600; cursor: pointer; }
+.menu-toggle-icon { font-size: 1.1rem; line-height: 1; }
 
 .promo { padding: 26px 0 18px; }
 .promo-card { max-width: 980px; padding: clamp(22px, 4vw, 36px); border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); }
@@ -80,10 +82,14 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .service-page p, .service-page li { line-height: 1.75; }
 
 .price-section { width: min(100%, 820px); margin: clamp(36px, 6vw, 70px) auto; }
+.price-title { margin-top: clamp(34px, 6vw, 68px); }
 .accordion { max-width: none; margin-bottom: 10px; border: 1px solid var(--color-border); border-radius: 14px; box-shadow: none; }
 .accordion-btn { min-height: 58px; padding: 14px 18px; border-left: 0; text-align: left; gap: 14px; }
 .accordion-btn:hover { background: var(--color-surface-soft); }
 .accordion-btn span { flex: 0 0 auto; }
+.accordion-content { background: var(--color-surface); }
+.price-item { gap: 20px; }
+.price-item strong { white-space: nowrap; color: var(--color-text); }
 
 .cta { border-radius: var(--radius-lg); margin-block: clamp(36px, 6vw, 70px); padding: clamp(38px, 6vw, 64px) 20px; }
 .cta-box { max-width: 760px; }
@@ -109,7 +115,11 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   .logo a { justify-content: center; }
   .header-info { justify-content: center; text-align: center; }
   .contact-item { align-items: center; }
-  .nav { justify-content: center; }
+  .menu-toggle { display: flex; }
+  .nav { display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 0 14px; border-top: 1px solid var(--color-border); }
+  .nav.is-open { display: flex; }
+  .nav a { display: block; padding: 11px 14px; text-align: center; }
+  .nav a::after { display: none; }
   .promo { padding-top: 16px; }
   .services-list { grid-template-columns: 1fr; max-width: 520px; }
   .service-card { padding: 12px; }
@@ -117,6 +127,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   .why-list { grid-template-columns: 1fr; }
   .reviews-list { grid-template-columns: 1fr; }
   .benefits-grid { grid-template-columns: 1fr; }
+  .price-item { align-items: flex-start; }
   .cta-form { display: grid; grid-template-columns: 1fr; }
   .cta-form input, .cta-form button { width: 100%; }
 }
@@ -128,10 +139,11 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   .header-info { flex-direction: column; align-items: stretch; }
   .socials { justify-content: center; }
   .btn-header { text-align: center; }
-  .nav { gap: 10px 18px; font-size: .94rem; }
   .promo-card { padding: 22px 18px; }
   .service-card .btn { width: 100%; }
   .accordion-btn { font-size: 1rem; padding: 13px 14px; }
+  .price-item { flex-direction: column; gap: 8px; }
+  .price-item strong { align-self: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {
