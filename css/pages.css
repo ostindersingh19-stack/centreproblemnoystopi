@@ -34,6 +34,15 @@
   line-height: 1;
 }
 
+.nav a[aria-current="page"] {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.nav a[aria-current="page"]::after {
+  right: 0;
+}
+
 .page-intro {
   width: min(100% - 32px, 900px);
   margin: 0 auto;
