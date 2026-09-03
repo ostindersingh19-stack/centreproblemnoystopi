@@ -13,7 +13,7 @@
     loadStylesheet('css/pages.css', 'pages');
   };
 
-  const initAccordionAccessibility = () => {
+  const initAccordions = () => {
     document.querySelectorAll('.accordion').forEach((accordion, index) => {
       const button = accordion.querySelector('.accordion-btn');
       const content = accordion.querySelector('.accordion-content');
@@ -24,26 +24,27 @@
       button.type = 'button';
       button.setAttribute('aria-controls', contentId);
 
-      const syncState = () => {
-        button.setAttribute('aria-expanded', String(accordion.classList.contains('active')));
+      const setState = open => {
+        accordion.classList.toggle('active', open);
+        button.setAttribute('aria-expanded', String(open));
+        content.style.maxHeight = open ? `${content.scrollHeight}px` : '';
       };
 
-      syncState();
-      button.addEventListener('click', () => requestAnimationFrame(syncState));
+      setState(accordion.classList.contains('active'));
+
+      button.addEventListener('click', () => {
+        setState(!accordion.classList.contains('active'));
+      });
     });
   };
 
   const initNavigationState = () => {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-
     document.querySelectorAll('.nav a').forEach(link => {
       const href = link.getAttribute('href');
       if (!href) return;
-      if (href === currentPage) {
-        link.setAttribute('aria-current', 'page');
-      } else {
-        link.removeAttribute('aria-current');
-      }
+      if (href === currentPage) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
     });
   };
 
@@ -84,6 +85,9 @@
 
     window.addEventListener('resize', () => {
       if (window.innerWidth > 768) closeMenu();
+      document.querySelectorAll('.accordion.active .accordion-content').forEach(content => {
+        content.style.maxHeight = `${content.scrollHeight}px`;
+      });
     });
   };
 
@@ -94,17 +98,13 @@
 
       if (nameInput) {
         nameInput.autocomplete = nameInput.autocomplete || 'name';
-        if (!nameInput.getAttribute('aria-label')) {
-          nameInput.setAttribute('aria-label', nameInput.placeholder || 'Ваше имя');
-        }
+        if (!nameInput.getAttribute('aria-label')) nameInput.setAttribute('aria-label', nameInput.placeholder || 'Ваше имя');
       }
 
       if (phoneInput) {
         phoneInput.autocomplete = phoneInput.autocomplete || 'tel';
         phoneInput.inputMode = phoneInput.inputMode || 'tel';
-        if (!phoneInput.getAttribute('aria-label')) {
-          phoneInput.setAttribute('aria-label', phoneInput.placeholder || 'Телефон');
-        }
+        if (!phoneInput.getAttribute('aria-label')) phoneInput.setAttribute('aria-label', phoneInput.placeholder || 'Телефон');
       }
     });
   };
@@ -139,11 +139,8 @@
         img.closest('.service-image')?.classList.add('is-image-missing');
       };
 
-      if (img.getAttribute('src')?.endsWith('/.jpg')) {
-        hideBrokenImage();
-      } else {
-        img.addEventListener('error', hideBrokenImage, { once: true });
-      }
+      if (img.getAttribute('src')?.endsWith('/.jpg')) hideBrokenImage();
+      else img.addEventListener('error', hideBrokenImage, { once: true });
     });
   };
 
@@ -151,15 +148,12 @@
 
   const init = () => {
     initNavigationState();
-    initAccordionAccessibility();
+    initAccordions();
     initMobileNavigation();
     improveForms();
     improveAccessibilityAndMedia();
   };
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init, { once: true });
-  } else {
-    init();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
+  else init();
 })();
