@@ -8,7 +8,7 @@
     document.head.appendChild(link);
   };
 
-  const initAccordion = () => {
+  const initAccordionAccessibility = () => {
     document.querySelectorAll('.accordion').forEach((accordion, index) => {
       const button = accordion.querySelector('.accordion-btn');
       const content = accordion.querySelector('.accordion-content');
@@ -18,12 +18,13 @@
       content.id = contentId;
       button.type = 'button';
       button.setAttribute('aria-controls', contentId);
-      button.setAttribute('aria-expanded', accordion.classList.contains('active') ? 'true' : 'false');
 
-      button.addEventListener('click', () => {
-        const isOpen = accordion.classList.toggle('active');
-        button.setAttribute('aria-expanded', String(isOpen));
-      });
+      const syncState = () => {
+        button.setAttribute('aria-expanded', String(accordion.classList.contains('active')));
+      };
+
+      syncState();
+      button.addEventListener('click', () => requestAnimationFrame(syncState));
     });
   };
 
@@ -59,9 +60,7 @@
     });
 
     document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && nav.classList.contains('is-open')) {
-        closeMenu(true);
-      }
+      if (event.key === 'Escape' && nav.classList.contains('is-open')) closeMenu(true);
     });
   };
 
@@ -81,9 +80,10 @@
     });
   };
 
+  loadRefinementLayer();
+
   const init = () => {
-    loadRefinementLayer();
-    initAccordion();
+    initAccordionAccessibility();
     initMobileNavigation();
     improveAccessibility();
   };
