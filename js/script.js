@@ -77,8 +77,15 @@
       if (icon?.classList.contains('fa-vk')) link.setAttribute('aria-label', 'ВКонтакте');
     });
 
+    const serviceImages = [...document.querySelectorAll('.services .service-image img')];
+    const priorityImages = new Set(serviceImages.slice(0, 3));
+
     document.querySelectorAll('img').forEach(img => {
-      if (!img.closest('.logo') && !img.hasAttribute('loading')) {
+      if (priorityImages.has(img)) {
+        img.loading = 'eager';
+        img.fetchPriority = 'high';
+        img.decoding = 'async';
+      } else if (!img.closest('.logo') && !img.hasAttribute('loading')) {
         img.loading = 'lazy';
         img.decoding = 'async';
       }
