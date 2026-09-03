@@ -64,7 +64,7 @@
     });
   };
 
-  const improveAccessibility = () => {
+  const improveAccessibilityAndMedia = () => {
     document.querySelectorAll('.socials a').forEach(link => {
       if (link.getAttribute('aria-label')) return;
       const icon = link.querySelector('i');
@@ -72,10 +72,21 @@
       if (icon?.classList.contains('fa-vk')) link.setAttribute('aria-label', 'ВКонтакте');
     });
 
-    document.querySelectorAll('img:not([loading])').forEach(img => {
-      if (!img.closest('.logo')) {
+    document.querySelectorAll('img').forEach(img => {
+      if (!img.closest('.logo') && !img.hasAttribute('loading')) {
         img.loading = 'lazy';
         img.decoding = 'async';
+      }
+
+      const hideBrokenImage = () => {
+        img.hidden = true;
+        img.closest('.service-image')?.classList.add('is-image-missing');
+      };
+
+      if (img.getAttribute('src')?.endsWith('/.jpg')) {
+        hideBrokenImage();
+      } else {
+        img.addEventListener('error', hideBrokenImage, { once: true });
       }
     });
   };
@@ -85,7 +96,7 @@
   const init = () => {
     initAccordionAccessibility();
     initMobileNavigation();
-    improveAccessibility();
+    improveAccessibilityAndMedia();
   };
 
   if (document.readyState === 'loading') {
