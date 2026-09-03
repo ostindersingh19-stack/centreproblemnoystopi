@@ -1,11 +1,16 @@
 (() => {
-  const loadRefinementLayer = () => {
-    if (document.querySelector('link[data-refinement-layer]')) return;
+  const loadStylesheet = (href, key) => {
+    if (document.querySelector(`link[data-site-layer="${key}"]`)) return;
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = 'css/refined.css';
-    link.dataset.refinementLayer = 'true';
+    link.href = href;
+    link.dataset.siteLayer = key;
     document.head.appendChild(link);
+  };
+
+  const loadRefinementLayers = () => {
+    loadStylesheet('css/refined.css', 'refined');
+    loadStylesheet('css/pages.css', 'pages');
   };
 
   const initAccordionAccessibility = () => {
@@ -91,7 +96,7 @@
     });
   };
 
-  loadRefinementLayer();
+  loadRefinementLayers();
 
   const init = () => {
     initAccordionAccessibility();
