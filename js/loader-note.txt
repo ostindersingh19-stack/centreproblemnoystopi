@@ -1,1 +1,0 @@
-refinements.js is loaded by js/script.js once integrated.
