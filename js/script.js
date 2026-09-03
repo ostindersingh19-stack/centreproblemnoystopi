@@ -33,6 +33,20 @@
     });
   };
 
+  const initNavigationState = () => {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+    document.querySelectorAll('.nav a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      if (href === currentPage) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  };
+
   const initMobileNavigation = () => {
     const nav = document.querySelector('.nav');
     const headerTop = document.querySelector('.header-top');
@@ -136,6 +150,7 @@
   loadRefinementLayers();
 
   const init = () => {
+    initNavigationState();
     initAccordionAccessibility();
     initMobileNavigation();
     improveForms();
