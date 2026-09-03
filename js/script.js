@@ -67,6 +67,32 @@
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape' && nav.classList.contains('is-open')) closeMenu(true);
     });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeMenu();
+    });
+  };
+
+  const improveForms = () => {
+    document.querySelectorAll('.cta-form').forEach(form => {
+      const nameInput = form.querySelector('input[type="text"]');
+      const phoneInput = form.querySelector('input[type="tel"]');
+
+      if (nameInput) {
+        nameInput.autocomplete = nameInput.autocomplete || 'name';
+        if (!nameInput.getAttribute('aria-label')) {
+          nameInput.setAttribute('aria-label', nameInput.placeholder || 'Ваше имя');
+        }
+      }
+
+      if (phoneInput) {
+        phoneInput.autocomplete = phoneInput.autocomplete || 'tel';
+        phoneInput.inputMode = phoneInput.inputMode || 'tel';
+        if (!phoneInput.getAttribute('aria-label')) {
+          phoneInput.setAttribute('aria-label', phoneInput.placeholder || 'Телефон');
+        }
+      }
+    });
   };
 
   const improveAccessibilityAndMedia = () => {
@@ -75,6 +101,10 @@
       const icon = link.querySelector('i');
       if (icon?.classList.contains('fa-telegram')) link.setAttribute('aria-label', 'Telegram');
       if (icon?.classList.contains('fa-vk')) link.setAttribute('aria-label', 'ВКонтакте');
+    });
+
+    document.querySelectorAll('.contacts-map iframe').forEach(frame => {
+      if (!frame.getAttribute('title')) frame.setAttribute('title', 'Карта с расположением центра');
     });
 
     const serviceImages = [...document.querySelectorAll('.services .service-image img')];
@@ -108,6 +138,7 @@
   const init = () => {
     initAccordionAccessibility();
     initMobileNavigation();
+    improveForms();
     improveAccessibilityAndMedia();
   };
 
