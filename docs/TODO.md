@@ -1,3 +1,0 @@
-- Integrate refinement loader into existing script
-- Consolidate legacy CSS after visual regression check
-- Add accessible mobile menu without changing navigation labels
