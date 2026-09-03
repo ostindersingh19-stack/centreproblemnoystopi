@@ -1,5 +1,39 @@
 /* Page-specific refinements. Loaded after the global refinement layer. */
 
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.menu-toggle-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
 .page-intro {
   width: min(100% - 32px, 900px);
   margin: 0 auto;
@@ -111,6 +145,32 @@
 @media (max-width: 768px) {
   .page-intro {
     width: min(100% - 28px, 900px);
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 6px 0 12px;
+  }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .nav a {
+    width: 100%;
+    padding: 12px 16px;
+    text-align: center;
+  }
+
+  .nav a::after {
+    display: none;
   }
 
   .contacts-wrapper {
