@@ -102,10 +102,16 @@ main.container > .breadcrumbs {
   line-height: 1.75;
 }
 
+.service-page > p,
+.service-detail > p {
+  max-width: 76ch;
+}
+
 .service-page h2,
 .service-detail h2 {
   margin-top: clamp(34px, 5vw, 54px);
   margin-bottom: 18px;
+  padding-top: 2px;
 }
 
 .service-page h3,
@@ -117,8 +123,9 @@ main.container > .breadcrumbs {
 .service-page ul,
 .service-detail ul {
   display: grid;
-  gap: 9px;
-  padding-left: 1.25rem;
+  gap: 10px;
+  padding-left: 1.3rem;
+  margin-bottom: 22px;
 }
 
 .service-list li::marker,
@@ -142,13 +149,23 @@ main.container > .breadcrumbs {
   border-radius: var(--radius-md);
 }
 
+.benefit-item {
+  height: 100%;
+}
+
 .faq-item + .faq-item {
   margin-top: 12px;
+}
+
+.faq-item h3,
+.benefit-item h3 {
+  font-size: 1.05rem;
 }
 
 .faq-item p,
 .benefit-item p {
   margin: 0;
+  line-height: 1.68;
 }
 
 .back-wrapper {
@@ -169,7 +186,7 @@ main.container > .breadcrumbs {
 
 .back-btn:hover,
 .back-btn:focus-visible {
-  border-color: #c6d2da;
+  border-color: var(--color-border-strong);
   background: var(--color-surface-soft);
 }
 
@@ -183,6 +200,11 @@ main.container > .breadcrumbs {
   font: inherit;
   font-weight: 600;
   cursor: pointer;
+}
+
+.service-detail > button:hover {
+  background: var(--color-accent-strong);
+  transform: translateY(-1px);
 }
 
 .contacts-section {
@@ -244,7 +266,8 @@ main.container > .breadcrumbs {
 .service-image.is-image-missing {
   position: relative;
   min-height: 180px;
-  background: linear-gradient(145deg, #eef3f6, #f8fafb) !important;
+  background: #f0f4f7 !important;
+  border: 1px dashed #d6dfe5;
 }
 
 .service-image.is-image-missing::after {
@@ -289,6 +312,11 @@ main.container > .breadcrumbs {
     display: none;
   }
 
+  .service-page,
+  .service-detail {
+    width: 100%;
+  }
+
   .benefits-grid {
     grid-template-columns: 1fr;
   }
@@ -307,11 +335,26 @@ main.container > .breadcrumbs {
 @media (max-width: 520px) {
   main.container > .breadcrumbs {
     padding-top: 22px;
+    margin-bottom: 16px;
+    font-size: .84rem;
+  }
+
+  .service-page h1,
+  .service-detail h1 {
+    font-size: clamp(1.85rem, 9vw, 2.35rem);
   }
 
   .service-page h2,
   .service-detail h2 {
     margin-top: 30px;
+    font-size: clamp(1.35rem, 7vw, 1.65rem);
+  }
+
+  .service-page > p,
+  .service-detail > p,
+  .service-page li,
+  .service-detail li {
+    line-height: 1.68;
   }
 
   .benefit-item,
