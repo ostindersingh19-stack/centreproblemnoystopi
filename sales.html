@@ -9,18 +9,51 @@
 </head>
 <body>
 <header class="header">
-<div class="container">
-<div class="header-top">
-<div class="logo"><a href="index.html"><img src="images/services/var1.png" alt="Центр стопы">Центр стопы</a></div>
-<div class="header-info">
-<div class="contact-item"><span class="contact-title">Адрес</span><span>Нижний Новгород, Казанское ш., 9</span><span class="address-note">(вход со стороны шоссе)</span></div>
-<div class="contact-item"><span class="contact-title">Телефон</span><a href="tel:+79991234567">+7 (999) 123-45-67</a></div>
-<div class="socials"><a href="https://t.me/username" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i></a><a href="https://vk.com/podolog_blog_nn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-vk"></i></a></div>
-<a href="https://n782223.yclients.com" target="_blank" rel="noopener noreferrer" class="btn-header">Онлайн запись</a>
-</div>
-</div>
-<nav class="nav" aria-label="Основная навигация"><a href="index.html">Главная</a><a href="about.html">О нас</a><a href="prices.html">Цены</a><a href="sales.html">Акции</a><a href="contacts.html">Контакты</a></nav>
-</div>
+    <div class="container">
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/services/var1.png" alt="Центр стопы">
+                    Центр стопы
+                </a>
+            </div>
+
+            <div class="header-info">
+                <div class="contact-item">
+                    <span class="contact-title">Адрес</span>
+                    <span>Нижний Новгород, Казанское ш., 9</span>
+                    <span class="address-note">(вход со стороны шоссе)</span>
+                </div>
+
+                <div class="contact-item">
+                    <span class="contact-title">Телефон</span>
+                    <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+                </div>
+
+                <div class="socials">
+                    <a href="https://t.me/username" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                        <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="https://vk.com/podolog_blog_nn" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
+                        <i class="fa-brands fa-vk" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <a href="https://n782223.yclients.com" target="_blank" rel="noopener noreferrer" class="btn-header">
+                    Онлайн запись
+                </a>
+            </div>
+        </div>
+
+        <nav class="nav" id="site-navigation" aria-label="Основная навигация">
+            <a href="index.html" data-page="index.html">Главная</a>
+            <a href="about.html" data-page="about.html">О нас</a>
+            <a href="prices.html" data-page="prices.html">Цены</a>
+            <a href="sales.html" data-page="sales.html" aria-current="page">Акции</a>
+            <a href="contacts.html" data-page="contacts.html">Контакты</a>
+        </nav>
+    </div>
 </header>
 <main>
 <h1 class="visually-hidden">Акции</h1>
@@ -35,9 +68,22 @@
 <div class="sale-card"><h3>Скидка 30% на вторую пару стелек</h3><p>При записи на любую процедуру консультация специалиста проводится бесплатно.</p></div>
 </div>
 </section>
-<section class="cta"><div class="cta-box"><h2>Запишитесь на приём</h2><p>Оставьте заявку — мы свяжемся с вами и подберём удобное время.</p><form class="cta-form"><input type="text" placeholder="Ваше имя" required><input type="tel" placeholder="Телефон" required><button type="submit">Оставить заявку</button></form></div></section>
+<section class="cta">
+    <div class="cta-box">
+        <h2>Запишитесь на приём</h2>
+        <p>Оставьте заявку — мы свяжемся с вами и подберём удобное время.</p>
+
+        <form class="cta-form">
+            <input type="text" placeholder="Ваше имя" autocomplete="name" required>
+            <input type="tel" placeholder="Телефон" autocomplete="tel" required>
+            <button type="submit">Оставить заявку</button>
+        </form>
+    </div>
+</section>
 </main>
-<footer class="footer"><p>© 2026 Центр стопы</p></footer>
+<footer class="footer">
+    <p>© 2026 Центр стопы</p>
+</footer>
 <script src="js/script.js"></script>
 </body>
 </html>

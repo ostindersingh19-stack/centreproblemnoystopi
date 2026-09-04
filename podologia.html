@@ -17,33 +17,41 @@
                     Центр стопы
                 </a>
             </div>
+
             <div class="header-info">
                 <div class="contact-item">
                     <span class="contact-title">Адрес</span>
                     <span>Нижний Новгород, Казанское ш., 9</span>
                     <span class="address-note">(вход со стороны шоссе)</span>
                 </div>
+
                 <div class="contact-item">
                     <span class="contact-title">Телефон</span>
                     <a href="tel:+79991234567">+7 (999) 123-45-67</a>
                 </div>
+
                 <div class="socials">
-                    <a href="https://t.me/username" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-telegram"></i>
+                    <a href="https://t.me/username" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                        <i class="fa-brands fa-telegram" aria-hidden="true"></i>
                     </a>
-                    <a href="https://vk.com/podolog_blog_nn" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-vk"></i>
+
+                    <a href="https://vk.com/podolog_blog_nn" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
+                        <i class="fa-brands fa-vk" aria-hidden="true"></i>
                     </a>
                 </div>
-                <a href="https://n782223.yclients.com" target="_blank" rel="noopener noreferrer" class="btn-header">Онлайн запись</a>
+
+                <a href="https://n782223.yclients.com" target="_blank" rel="noopener noreferrer" class="btn-header">
+                    Онлайн запись
+                </a>
             </div>
         </div>
-        <nav class="nav" aria-label="Основная навигация">
-            <a href="index.html">Главная</a>
-            <a href="about.html">О нас</a>
-            <a href="prices.html">Цены</a>
-            <a href="sales.html">Акции</a>
-            <a href="contacts.html">Контакты</a>
+
+        <nav class="nav" id="site-navigation" aria-label="Основная навигация">
+            <a href="index.html" data-page="index.html">Главная</a>
+            <a href="about.html" data-page="about.html">О нас</a>
+            <a href="prices.html" data-page="prices.html">Цены</a>
+            <a href="sales.html" data-page="sales.html">Акции</a>
+            <a href="contacts.html" data-page="contacts.html">Контакты</a>
         </nav>
     </div>
 </header>
@@ -67,7 +75,7 @@
         <div class="services-list">
             <div class="service-card">
                 <div class="service-image">
-                    <img src="images/services/pedicure.jpg" alt="Парамедицинский педикюр">
+                    <img src="images/services/pedicure.jpg" alt="Парамедицинский педикюр" loading="lazy" decoding="async">
                 </div>
                 <h3>Парамедицинский педикюр</h3>
                 <a href="pedicure.html" class="btn">Подробнее</a>
@@ -81,7 +89,7 @@
 
             <div class="service-card">
                 <div class="service-image">
-                    <img src="images/services/vroshiy.jpg" alt="Вросший ноготь">
+                    <img src="images/services/vroshiy.jpg" alt="Вросший ноготь" loading="lazy" decoding="async">
                 </div>
                 <h3>Вросший ноготь</h3>
                 <a href="vroshiy.html" class="btn">Подробнее</a>
@@ -101,7 +109,7 @@
 
             <div class="service-card">
                 <div class="service-image">
-                    <img src="images/services/correction.jpg" alt="Коррекция">
+                    <img src="images/services/correction.jpg" alt="Коррекция" loading="lazy" decoding="async">
                 </div>
                 <h3>Коррекционная система</h3>
                 <a href="correction.html" class="btn">Подробнее</a>
@@ -109,7 +117,7 @@
 
             <div class="service-card">
                 <div class="service-image">
-                    <img src="images/services/mozol.jpg" alt="Мозоли">
+                    <img src="images/services/mozol.jpg" alt="Мозоли" loading="lazy" decoding="async">
                 </div>
                 <h3>Мозоли и натоптыши</h3>
                 <a href="mozol.html" class="btn">Подробнее</a>
@@ -117,7 +125,7 @@
 
             <div class="service-card">
                 <div class="service-image">
-                    <img src="images/services/borodavka.jpg" alt="Обработка проблемных зон">
+                    <img src="images/services/borodavka.jpg" alt="Обработка проблемных зон" loading="lazy" decoding="async">
                 </div>
                 <h3>Обработка проблемных зон</h3>
                 <a href="borodavka.html" class="btn">Подробнее</a>
@@ -125,7 +133,7 @@
 
             <div class="service-card">
                 <div class="service-image">
-                    <img src="images/services/ortez.jpg" alt="Ортезы">
+                    <img src="images/services/ortez.jpg" alt="Ортезы" loading="lazy" decoding="async">
                 </div>
                 <h3>Ортезы</h3>
                 <a href="ortez.html" class="btn">Подробнее</a>
@@ -134,16 +142,17 @@
     </section>
 
     <section class="cta">
-        <div class="cta-box">
-            <h2>Запишитесь на приём</h2>
-            <p>Оставьте заявку — мы свяжемся с вами и подберём удобное время.</p>
-            <form class="cta-form">
-                <input type="text" placeholder="Ваше имя" required>
-                <input type="tel" placeholder="Телефон" required>
-                <button type="submit">Оставить заявку</button>
-            </form>
-        </div>
-    </section>
+    <div class="cta-box">
+        <h2>Запишитесь на приём</h2>
+        <p>Оставьте заявку — мы свяжемся с вами и подберём удобное время.</p>
+
+        <form class="cta-form">
+            <input type="text" placeholder="Ваше имя" autocomplete="name" required>
+            <input type="tel" placeholder="Телефон" autocomplete="tel" required>
+            <button type="submit">Оставить заявку</button>
+        </form>
+    </div>
+</section>
 </main>
 
 <footer class="footer">
