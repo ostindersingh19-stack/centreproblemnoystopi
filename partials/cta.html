@@ -3,10 +3,14 @@
         <h2>Запишитесь на приём</h2>
         <p>Оставьте заявку — мы свяжемся с вами и подберём удобное время.</p>
 
-        <form class="cta-form">
-            <input type="text" placeholder="Ваше имя" autocomplete="name" required>
-            <input type="tel" placeholder="Телефон" autocomplete="tel" required>
+        <form class="cta-form" action="https://formsubmit.co/podolog.nn@mail.ru" method="POST">
+            <input type="hidden" name="_subject" value="Новая заявка с сайта «Центр заботы»">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+            <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required>
             <button type="submit">Оставить заявку</button>
+            <p class="cta-status" role="status" aria-live="polite"></p>
         </form>
     </div>
 </section>

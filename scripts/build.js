@@ -26,10 +26,6 @@ function withImageDefaults(html, filename) {
     let serviceImageCount = 0;
 
     return html.replace(/<img\b([^>]*?)>/g, (match, attrs) => {
-        if (attrs.includes('images/services/var1.png')) {
-            return match;
-        }
-
         let nextAttrs = attrs;
 
         if (filename === 'index.html' && serviceImageCount < 3) {

@@ -484,6 +484,18 @@ p {
     margin-bottom:10px;
 
 }
+
+.insoles-services .service-card {
+
+    min-height:420px;
+
+}
+
+.insoles-services .service-card p {
+
+    min-height:96px;
+
+}
 /* =========================
    REVIEWS
 ========================= */

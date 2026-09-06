@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Центр стопы</title>
+<title>Центр заботы</title>
 
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -18,8 +18,8 @@
         <div class="header-top">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/services/var1.png" alt="Центр стопы">
-                    Центр стопы
+                    <img src="images/services/center-care-logo.png" alt="Центр заботы" loading="lazy" decoding="async">
+                    Центр заботы
                 </a>
             </div>
 
@@ -63,18 +63,18 @@
 
 <main>
 
-<section class="hero">
+<section class="hero about-hero">
 
     <div class="hero-content">
 
         <h1>
-            О нашей клинике
+            О нашем центре
         </h1>
 
         <p>
-            Мы профессиональный центр ухода за стопами.
-            Помогаем пациентам избавиться от боли и дискомфорта,
-            используя современные методы лечения и ухода.
+            Мы — центр заботы о стопах и комфорта в каждом шаге.
+            Помогаем клиентам поддерживать ухоженный вид стоп,
+            выбирая подходящие процедуры и ежедневный уход.
         </p>
 
     </div>
@@ -88,43 +88,36 @@
     </h2>
 
     <div class="why-list">
-
-        <div class="why-card">
-            <h3>
-                🧑‍⚕️ Опытные специалисты
-            </h3>
-            <p>
-                Наши специалисты имеют профессиональную подготовку и большой опыт работы.
-            </p>
-        </div>
-
-        <div class="why-card">
-            <h3>
-                🛡 Безопасность
-            </h3>
-            <p>
-                Используем стерильные инструменты и соблюдаем медицинские стандарты.
-            </p>
-        </div>
-
-        <div class="why-card">
-            <h3>
-                ⏱ Быстрый результат
-            </h3>
-            <p>
-                Подбираем индивидуальное решение для каждого пациента.
-            </p>
-        </div>
-
-        <div class="why-card">
-            <h3>
-                ❤️ Индивидуальный подход
-            </h3>
-            <p>
-                Внимательно относимся к каждому клиенту и его проблеме.
-            </p>
-        </div>
-
+        <article class="why-card">
+            <h3>Удобная запись</h3>
+            <p>Запишитесь заранее и выберите удобное время для посещения центра. Если беспокоит острая боль, постараемся принять вас как можно скорее.</p>
+            <img src="images/services/why-booking.png" alt="Смартфон и календарь с отмеченной записью" loading="lazy" decoding="async">
+        </article>
+        <article class="why-card">
+            <h3>Стерильность и безопасность</h3>
+            <p>Инструменты проходят несколько этапов обработки и стерилизации. Соблюдаем требования к чистоте рабочего пространства на каждом этапе процедуры.</p>
+            <img src="images/services/why-clean.png" alt="Открытый кейс с инструментами, контейнер для стерилизации и салфетки" loading="lazy" decoding="async">
+        </article>
+        <article class="why-card">
+            <h3>Немецкое оборудование</h3>
+            <p>Работаем на профессиональных аппаратах SUDA для аппаратной обработки стоп и ногтей.</p>
+            <img src="images/services/why-suda-device.png" alt="Профессиональный подологический аппарат с ручкой и фрезами" loading="lazy" decoding="async">
+        </article>
+        <article class="why-card">
+            <h3>Выезд на дом</h3>
+            <p>Для тех, кому сложно приехать в центр, доступен выезд специалиста на дом.</p>
+            <img src="images/services/why-home.png" alt="Сумка специалиста с надписью «ПОДОЛОГ»" loading="lazy" decoding="async">
+        </article>
+        <article class="why-card">
+            <h3>Профессиональный уход</h3>
+            <p>Используем профессиональную немецкую космецевтику для ухода за кожей стоп и ногтями.</p>
+            <img src="images/services/why-cosmetics.png" alt="Профессиональная косметика на подносе" loading="lazy" decoding="async">
+        </article>
+        <article class="why-card">
+            <h3>Индивидуальный подход</h3>
+            <p>Каждая процедура подбирается индивидуально с учётом особенностей стоп и ваших пожеланий.</p>
+            <img src="images/services/why-individual.png" alt="Стопа и схема стопы для индивидуального подбора" loading="lazy" decoding="async">
+        </article>
     </div>
 
 </section>
@@ -134,10 +127,14 @@
         <h2>Запишитесь на приём</h2>
         <p>Оставьте заявку — мы свяжемся с вами и подберём удобное время.</p>
 
-        <form class="cta-form">
-            <input type="text" placeholder="Ваше имя" autocomplete="name" required>
-            <input type="tel" placeholder="Телефон" autocomplete="tel" required>
+        <form class="cta-form" action="https://formsubmit.co/podolog.nn@mail.ru" method="POST">
+            <input type="hidden" name="_subject" value="Новая заявка с сайта «Центр заботы»">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+            <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required>
             <button type="submit">Оставить заявку</button>
+            <p class="cta-status" role="status" aria-live="polite"></p>
         </form>
     </div>
 </section>
@@ -145,7 +142,8 @@
 </main>
 
 <footer class="footer">
-    <p>© 2026 Центр стопы</p>
+    <p class="site-disclaimer">Материалы, размещенные на данной странице, носят информационный характер и предназначены для ознакомительных целей. Услуга не является медицинской.</p>
+    <p>© 2026 Центр заботы</p>
 </footer>
 
 <script src="js/script.js"></script>

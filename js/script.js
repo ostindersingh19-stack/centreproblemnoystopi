@@ -46,6 +46,7 @@
       if (href === currentPage) link.setAttribute('aria-current', 'page');
       else link.removeAttribute('aria-current');
     });
+
   };
 
   const initMobileNavigation = () => {
@@ -106,6 +107,38 @@
         phoneInput.inputMode = phoneInput.inputMode || 'tel';
         if (!phoneInput.getAttribute('aria-label')) phoneInput.setAttribute('aria-label', phoneInput.placeholder || 'Телефон');
       }
+
+      if (form.dataset.ready) return;
+      form.dataset.ready = 'true';
+      const status = form.querySelector('.cta-status');
+      const submitButton = form.querySelector('button[type="submit"]');
+
+      form.addEventListener('submit', async event => {
+        event.preventDefault();
+        if (!form.action || !status || !submitButton) return;
+
+        submitButton.disabled = true;
+        status.className = 'cta-status is-sending';
+        status.textContent = 'Отправка заявки...';
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+          });
+
+          if (!response.ok) throw new Error('Form submission failed');
+          form.reset();
+          status.className = 'cta-status is-success';
+          status.textContent = 'Спасибо! Заявка отправлена.';
+        } catch {
+          status.className = 'cta-status is-error';
+          status.textContent = 'Не удалось отправить заявку. Позвоните нам по телефону.';
+        } finally {
+          submitButton.disabled = false;
+        }
+      });
     });
   };
 
@@ -144,6 +177,31 @@
     });
   };
 
+  const initCookieNotice = () => {
+    let accepted = false;
+    try {
+      accepted = localStorage.getItem('centerstop-cookie-consent') === 'accepted';
+    } catch {
+      accepted = false;
+    }
+    if (accepted || document.querySelector('.cookie-notice')) return;
+
+    const notice = document.createElement('aside');
+    notice.className = 'cookie-notice';
+    notice.setAttribute('aria-label', 'Уведомление о cookie');
+    notice.innerHTML = '<p>Мы используем файлы cookie, чтобы сайт работал корректно.</p><button type="button">Понятно</button>';
+    document.body.appendChild(notice);
+
+    notice.querySelector('button').addEventListener('click', () => {
+      try {
+        localStorage.setItem('centerstop-cookie-consent', 'accepted');
+      } catch {
+        // The notice can still be dismissed when storage is unavailable.
+      }
+      notice.remove();
+    });
+  };
+
   loadRefinementLayers();
 
   const init = () => {
@@ -152,6 +210,7 @@
     initMobileNavigation();
     improveForms();
     improveAccessibilityAndMedia();
+    initCookieNotice();
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });

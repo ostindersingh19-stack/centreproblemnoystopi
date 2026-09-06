@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Центр стопы</title>
+<title>Центр заботы</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -20,8 +20,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         <div class="header-top">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/services/var1.png" alt="Центр стопы">
-                    Центр стопы
+                    <img src="images/services/center-care-logo.png" alt="Центр заботы" loading="lazy" decoding="async">
+                    Центр заботы
                 </a>
             </div>
 
@@ -114,10 +114,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         <h2>Запишитесь на приём</h2>
         <p>Оставьте заявку — мы свяжемся с вами и подберём удобное время.</p>
 
-        <form class="cta-form">
-            <input type="text" placeholder="Ваше имя" autocomplete="name" required>
-            <input type="tel" placeholder="Телефон" autocomplete="tel" required>
+        <form class="cta-form" action="https://formsubmit.co/podolog.nn@mail.ru" method="POST">
+            <input type="hidden" name="_subject" value="Новая заявка с сайта «Центр заботы»">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+            <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required>
             <button type="submit">Оставить заявку</button>
+            <p class="cta-status" role="status" aria-live="polite"></p>
         </form>
     </div>
 </section>
@@ -125,7 +129,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </main>
 
 <footer class="footer">
-    <p>© 2026 Центр стопы</p>
+    <p class="site-disclaimer">Материалы, размещенные на данной странице, носят информационный характер и предназначены для ознакомительных целей. Услуга не является медицинской.</p>
+    <p>© 2026 Центр заботы</p>
 </footer>
 
 <script src="js/script.js"></script>

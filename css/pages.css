@@ -59,6 +59,22 @@
   line-height: 1.75;
 }
 
+.about-hero {
+  padding: clamp(36px, 5vw, 56px) 0 clamp(18px, 2.5vw, 30px);
+}
+
+.about-hero + .why {
+  padding-top: clamp(18px, 3vw, 32px);
+}
+
+.massage-hero {
+  padding: clamp(36px, 5vw, 56px) 0 clamp(18px, 2.5vw, 30px);
+}
+
+.massage-hero + .service-page {
+  padding-top: clamp(18px, 3vw, 32px);
+}
+
 .breadcrumbs {
   display: flex;
   flex-wrap: wrap;
@@ -215,18 +231,24 @@ main.container > .breadcrumbs {
   width: min(100% - 32px, var(--container));
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-  gap: clamp(22px, 4vw, 42px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(18px, 2.5vw, 28px);
   align-items: stretch;
 }
 
 .contacts-info {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: minmax(164px, 1fr);
   gap: 14px;
 }
 
 .contact-card {
+  min-width: 0;
+  min-height: 164px;
+  display: flex;
+  flex-direction: column;
   padding: clamp(18px, 3vw, 26px);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -235,11 +257,36 @@ main.container > .breadcrumbs {
 
 .contact-card h3 {
   margin-bottom: 10px;
-  font-size: 1.05rem;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.25;
+}
+
+.contact-card p {
+  font-size: .98rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 .contact-card p + p {
   margin-top: 7px;
+}
+
+.cta-status {
+  grid-column: 1 / -1;
+  min-height: 1.4em;
+  margin: 0;
+  color: rgba(255, 255, 255, .9);
+  font-size: .9rem;
+  text-align: center;
+}
+
+.cta-status.is-error {
+  color: #ffe1e1;
+}
+
+.cta-form button:disabled {
+  cursor: wait;
+  opacity: .7;
 }
 
 .contacts-map {
@@ -281,6 +328,70 @@ main.container > .breadcrumbs {
   border-radius: 999px;
 }
 
+.cookie-notice {
+  position: fixed;
+  z-index: 20;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: min(100% - 36px, 620px);
+  padding: 14px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-surface);
+  box-shadow: 0 12px 32px rgba(27, 44, 58, .16);
+}
+
+.site-disclaimer {
+  max-width: 980px;
+  margin: 0 auto 10px;
+  color: var(--color-muted);
+  font-size: .78rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.cookie-notice p {
+  flex: 1;
+  margin: 0;
+  font-size: .9rem;
+  line-height: 1.45;
+}
+
+.cookie-notice button {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 9px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cookie-notice button:hover,
+.cookie-notice button:focus-visible {
+  background: var(--color-accent-strong);
+}
+
+.insoles-services .services-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.insoles-services .service-card {
+  min-height: 420px;
+}
+
+.insoles-services .service-card p {
+  min-height: 96px;
+}
+
 @media (max-width: 768px) {
   .page-intro {
     width: min(100% - 28px, 900px);
@@ -318,6 +429,10 @@ main.container > .breadcrumbs {
   }
 
   .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insoles-services .services-list {
     grid-template-columns: 1fr;
   }
 
@@ -370,10 +485,24 @@ main.container > .breadcrumbs {
 
   .contacts-info {
     grid-template-columns: 1fr;
+    grid-auto-rows: auto;
   }
 
   .contacts-map,
   .contacts-map iframe {
     min-height: 280px;
+  }
+
+  .cookie-notice {
+    right: 11px;
+    bottom: 11px;
+    width: calc(100% - 22px);
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cookie-notice button {
+    width: 100%;
   }
 }

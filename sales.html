@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Центр стопы</title>
+<title>Центр заботы</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -13,8 +13,8 @@
         <div class="header-top">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/services/var1.png" alt="Центр стопы">
-                    Центр стопы
+                    <img src="images/services/center-care-logo.png" alt="Центр заботы" loading="lazy" decoding="async">
+                    Центр заботы
                 </a>
             </div>
 
@@ -61,11 +61,11 @@
 <h2>Наши акции</h2>
 <div class="sales-list">
 <div class="sale-card"><h3>Первое посещение</h3><p>Скидка 10% на парамедицинский педикюр при первом визите.</p></div>
-<div class="sale-card"><h3>Для пациентов 70+</h3><p>Постоянная скидка 10% для лиц старше 70 лет.</p></div>
+<div class="sale-card"><h3>Для клиентов 70+</h3><p>Постоянная скидка 10% для клиентов старше 70 лет.</p></div>
 <div class="sale-card"><h3>День рождения</h3><p>Скидка 15% за 3 дня до, в день рождения и 3 дня после него.</p></div>
 <div class="sale-card"><h3>Приведи друга</h3><p>Получите скидку 10% на следующую процедуру после первого визита вашего друга.</p></div>
 <div class="sale-card"><h3>Бесплатная консультация</h3><p>При записи на любую процедуру консультация специалиста проводится бесплатно.</p></div>
-<div class="sale-card"><h3>Скидка 30% на вторую пару стелек</h3><p>При записи на любую процедуру консультация специалиста проводится бесплатно.</p></div>
+<div class="sale-card"><h3>Скидка 30% на вторую пару стелек</h3><p>При изготовлении второй пары стелек предоставляется скидка 30%.</p></div>
 </div>
 </section>
 <section class="cta">
@@ -73,16 +73,21 @@
         <h2>Запишитесь на приём</h2>
         <p>Оставьте заявку — мы свяжемся с вами и подберём удобное время.</p>
 
-        <form class="cta-form">
-            <input type="text" placeholder="Ваше имя" autocomplete="name" required>
-            <input type="tel" placeholder="Телефон" autocomplete="tel" required>
+        <form class="cta-form" action="https://formsubmit.co/podolog.nn@mail.ru" method="POST">
+            <input type="hidden" name="_subject" value="Новая заявка с сайта «Центр заботы»">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+            <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required>
             <button type="submit">Оставить заявку</button>
+            <p class="cta-status" role="status" aria-live="polite"></p>
         </form>
     </div>
 </section>
 </main>
 <footer class="footer">
-    <p>© 2026 Центр стопы</p>
+    <p class="site-disclaimer">Материалы, размещенные на данной странице, носят информационный характер и предназначены для ознакомительных целей. Услуга не является медицинской.</p>
+    <p>© 2026 Центр заботы</p>
 </footer>
 <script src="js/script.js"></script>
 </body>

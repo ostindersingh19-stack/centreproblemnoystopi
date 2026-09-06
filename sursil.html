@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Центр стопы</title>
+<title>Центр заботы</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -13,8 +13,8 @@
         <div class="header-top">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/services/var1.png" alt="Центр стопы">
-                    Центр стопы
+                    <img src="images/services/center-care-logo.png" alt="Центр заботы" loading="lazy" decoding="async">
+                    Центр заботы
                 </a>
             </div>
 
@@ -57,29 +57,33 @@
 </header>
 <main class="container">
 <section class="service-page service-detail">
-<h1>Что это за услуга</h1>
-<p>Медицинский аппаратный педикюр — это безопасная процедура обработки стоп и ногтей без травмирования кожи.</p>
-<h3>Варианты процедуры</h3>
-<ul><li>Базовый педикюр</li><li>Педикюр при проблемной коже</li><li>Профилактический уход</li></ul>
-<h3>Стоимость</h3>
-<p><strong>от 2900 до 3900 ₽</strong></p>
-<button>Записаться</button>
+<h1>Sursil Orto</h1>
+<p>Индивидуальные стельки для поддержки стопы и более равномерного распределения нагрузки при ходьбе.</p>
+<h2>Как подбираются стельки</h2>
+<p>Специалист учитывает особенности стопы, повседневную обувь и задачи клиента, после чего помогает выбрать подходящий вариант.</p>
+<h2>Особенности</h2>
+<ul class="service-list"><li>индивидуальная подгонка;</li><li>поддержка стопы в обуви;</li><li>рекомендации по привыканию и уходу.</li></ul>
 </section>
 <section class="cta">
     <div class="cta-box">
         <h2>Запишитесь на приём</h2>
         <p>Оставьте заявку — мы свяжемся с вами и подберём удобное время.</p>
 
-        <form class="cta-form">
-            <input type="text" placeholder="Ваше имя" autocomplete="name" required>
-            <input type="tel" placeholder="Телефон" autocomplete="tel" required>
+        <form class="cta-form" action="https://formsubmit.co/podolog.nn@mail.ru" method="POST">
+            <input type="hidden" name="_subject" value="Новая заявка с сайта «Центр заботы»">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+            <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required>
             <button type="submit">Оставить заявку</button>
+            <p class="cta-status" role="status" aria-live="polite"></p>
         </form>
     </div>
 </section>
 </main>
 <footer class="footer">
-    <p>© 2026 Центр стопы</p>
+    <p class="site-disclaimer">Материалы, размещенные на данной странице, носят информационный характер и предназначены для ознакомительных целей. Услуга не является медицинской.</p>
+    <p>© 2026 Центр заботы</p>
 </footer>
 <script src="js/script.js"></script>
 </body>

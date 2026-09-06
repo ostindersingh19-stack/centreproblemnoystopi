@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Центр стопы</title>
+<title>Центр заботы</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -13,8 +13,8 @@
         <div class="header-top">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/services/var1.png" alt="Центр стопы">
-                    Центр стопы
+                    <img src="images/services/center-care-logo.png" alt="Центр заботы" loading="lazy" decoding="async">
+                    Центр заботы
                 </a>
             </div>
 
@@ -75,41 +75,47 @@
         <div class="services-list">
             <div class="service-card">
                 <div class="service-image">
-                    <img src="images/services/pedicure.jpg" alt="Парамедицинский педикюр" loading="lazy" decoding="async">
+                    <img src="images/services/pedicure-illustration.png" alt="Парамедицинский педикюр" loading="lazy" decoding="async">
                 </div>
                 <h3>Парамедицинский педикюр</h3>
                 <a href="pedicure.html" class="btn">Подробнее</a>
             </div>
 
             <div class="service-card">
-                <div class="service-image is-image-missing" aria-hidden="true"></div>
+                <div class="service-image">
+                    <img src="images/services/fungus-illustration.png" alt="Грибок ногтей и стоп" loading="lazy" decoding="async">
+                </div>
                 <h3>Грибок ногтей и стоп</h3>
                 <a href="gribok.html" class="btn">Подробнее</a>
             </div>
 
             <div class="service-card">
                 <div class="service-image">
-                    <img src="images/services/vroshiy.jpg" alt="Вросший ноготь" loading="lazy" decoding="async">
+                    <img src="images/services/ingrown-illustration.png" alt="Вросший ноготь" loading="lazy" decoding="async">
                 </div>
                 <h3>Вросший ноготь</h3>
                 <a href="vroshiy.html" class="btn">Подробнее</a>
             </div>
 
             <div class="service-card">
-                <div class="service-image is-image-missing" aria-hidden="true"></div>
+                <div class="service-image">
+                    <img src="images/services/manicure-illustration.png" alt="Маникюр" loading="lazy" decoding="async">
+                </div>
                 <h3>Маникюр</h3>
                 <a href="manikur.html" class="btn">Подробнее</a>
             </div>
 
             <div class="service-card">
-                <div class="service-image is-image-missing" aria-hidden="true"></div>
+                <div class="service-image">
+                    <img src="images/services/nail-plate-illustration.png" alt="Обработка ногтевых пластин" loading="lazy" decoding="async">
+                </div>
                 <h3>Обработка ногтевых пластин</h3>
                 <a href="nogti.html" class="btn">Подробнее</a>
             </div>
 
             <div class="service-card">
                 <div class="service-image">
-                    <img src="images/services/correction.jpg" alt="Коррекция" loading="lazy" decoding="async">
+                    <img src="images/services/correction-system-illustration.png" alt="Коррекционная система" loading="lazy" decoding="async">
                 </div>
                 <h3>Коррекционная система</h3>
                 <a href="correction.html" class="btn">Подробнее</a>
@@ -117,7 +123,7 @@
 
             <div class="service-card">
                 <div class="service-image">
-                    <img src="images/services/mozol.jpg" alt="Мозоли" loading="lazy" decoding="async">
+                    <img src="images/services/callus-illustration.png" alt="Мозоли и натоптыши" loading="lazy" decoding="async">
                 </div>
                 <h3>Мозоли и натоптыши</h3>
                 <a href="mozol.html" class="btn">Подробнее</a>
@@ -125,7 +131,7 @@
 
             <div class="service-card">
                 <div class="service-image">
-                    <img src="images/services/borodavka.jpg" alt="Обработка проблемных зон" loading="lazy" decoding="async">
+                    <img src="images/services/problem-zone-illustration.png" alt="Обработка проблемных зон" loading="lazy" decoding="async">
                 </div>
                 <h3>Обработка проблемных зон</h3>
                 <a href="borodavka.html" class="btn">Подробнее</a>
@@ -133,7 +139,7 @@
 
             <div class="service-card">
                 <div class="service-image">
-                    <img src="images/services/ortez.jpg" alt="Ортезы" loading="lazy" decoding="async">
+                    <img src="images/services/orthoses-illustration.png" alt="Ортезы" loading="lazy" decoding="async">
                 </div>
                 <h3>Ортезы</h3>
                 <a href="ortez.html" class="btn">Подробнее</a>
@@ -146,17 +152,22 @@
         <h2>Запишитесь на приём</h2>
         <p>Оставьте заявку — мы свяжемся с вами и подберём удобное время.</p>
 
-        <form class="cta-form">
-            <input type="text" placeholder="Ваше имя" autocomplete="name" required>
-            <input type="tel" placeholder="Телефон" autocomplete="tel" required>
+        <form class="cta-form" action="https://formsubmit.co/podolog.nn@mail.ru" method="POST">
+            <input type="hidden" name="_subject" value="Новая заявка с сайта «Центр заботы»">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+            <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required>
             <button type="submit">Оставить заявку</button>
+            <p class="cta-status" role="status" aria-live="polite"></p>
         </form>
     </div>
 </section>
 </main>
 
 <footer class="footer">
-    <p>© 2026 Центр стопы</p>
+    <p class="site-disclaimer">Материалы, размещенные на данной странице, носят информационный характер и предназначены для ознакомительных целей. Услуга не является медицинской.</p>
+    <p>© 2026 Центр заботы</p>
 </footer>
 <script src="js/script.js"></script>
 </body>

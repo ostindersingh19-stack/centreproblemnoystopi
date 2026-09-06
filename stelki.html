@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Центр стопы</title>
+<title>Центр заботы</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -13,8 +13,8 @@
         <div class="header-top">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/services/var1.png" alt="Центр стопы">
-                    Центр стопы
+                    <img src="images/services/center-care-logo.png" alt="Центр заботы" loading="lazy" decoding="async">
+                    Центр заботы
                 </a>
             </div>
 
@@ -60,26 +60,28 @@
 <section class="hero">
     <div class="hero-content">
         <h1>Индивидуальные стельки</h1>
-        <p>Изготовление ортопедических стелек
+        <p>Изготовление стелек
         для коррекции нагрузки и поддержки стопы.</p>
     </div>
 </section>
 
-<section class="services">
+<section class="services insoles-services">
     <h2>Наши решения</h2>
     <div class="services-list">
         <div class="service-card">
-            <div class="service-image insoles"><img src="images/services/stelki.jpg" alt="Sursil Orto" loading="lazy" decoding="async"></div>
-            <h3>Sursil Orto</h3>
-            <p>Индивидуальные ортопедические стельки
-            для правильного распределения нагрузки.</p>
-            <a href="sursil.html" class="btn">Подробнее</a>
+            <div class="service-image insoles"><img src="images/services/insoles-individual.png" alt="Индивидуальные стельки" loading="lazy" decoding="async"></div>
+            <h3>Индивидуальные стельки</h3>
+            <p>Изготавливаются с учётом особенностей стопы и распределения нагрузки. Форма и элементы стельки подбираются специалистом после осмотра стоп.</p>
         </div>
         <div class="service-card">
-            <div class="service-image insoles"><img src="images/services/stelki.jpg" alt="Стельки РФ" loading="lazy" decoding="async"></div>
-            <h3>Стельки РФ</h3>
-            <p>Изготовление стелек с учетом особенностей стопы.</p>
-            <a href="stelkarf.html" class="btn">Подробнее</a>
+            <div class="service-image insoles"><img src="images/services/insoles-relief.png" alt="Разгрузочные стельки" loading="lazy" decoding="async"></div>
+            <h3>Разгрузочные стельки</h3>
+            <p>Помогают уменьшить давление на отдельные участки стопы и сделать нагрузку при ходьбе более комфортной. Разгрузочные элементы располагаются с учётом проблемных зон.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-image insoles"><img src="images/services/insoles-combined.png" alt="Комбинированные стельки" loading="lazy" decoding="async"></div>
+            <h3>Комбинированные стельки</h3>
+            <p>Сочетают индивидуальную форму, поддержку и локальную разгрузку необходимых участков стопы. Конструкция подбирается с учётом особенностей стоп и повседневной нагрузки.</p>
         </div>
     </div>
 </section>
@@ -89,17 +91,22 @@
         <h2>Запишитесь на приём</h2>
         <p>Оставьте заявку — мы свяжемся с вами и подберём удобное время.</p>
 
-        <form class="cta-form">
-            <input type="text" placeholder="Ваше имя" autocomplete="name" required>
-            <input type="tel" placeholder="Телефон" autocomplete="tel" required>
+        <form class="cta-form" action="https://formsubmit.co/podolog.nn@mail.ru" method="POST">
+            <input type="hidden" name="_subject" value="Новая заявка с сайта «Центр заботы»">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+            <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required>
             <button type="submit">Оставить заявку</button>
+            <p class="cta-status" role="status" aria-live="polite"></p>
         </form>
     </div>
 </section>
 </main>
 
 <footer class="footer">
-    <p>© 2026 Центр стопы</p>
+    <p class="site-disclaimer">Материалы, размещенные на данной странице, носят информационный характер и предназначены для ознакомительных целей. Услуга не является медицинской.</p>
+    <p>© 2026 Центр заботы</p>
 </footer>
 <script src="js/script.js"></script>
 </body>
