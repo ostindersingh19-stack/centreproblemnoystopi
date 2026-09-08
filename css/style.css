@@ -2224,3 +2224,121 @@ display:block;
     font-weight:500;
 
 }
+
+/* Единая типографика сайта */
+:root {
+    --site-font: Arial, sans-serif;
+    --site-text-size: 16px;
+    --site-body-leading: 1.6;
+}
+
+html {
+    font-size: 16px;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+    font-family: var(--site-font);
+}
+
+body {
+    font-size: var(--site-text-size);
+    line-height: var(--site-body-leading);
+}
+
+h1,
+h2,
+h3,
+p,
+li,
+button,
+input,
+textarea,
+select {
+    letter-spacing: 0;
+}
+
+h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.15;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.25;
+}
+
+h3 {
+    font-size: 1.125rem;
+    line-height: 1.35;
+}
+
+p,
+li {
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+button,
+input,
+textarea,
+select,
+.btn,
+.btn-header {
+    font-size: 1rem;
+}
+
+.logo a,
+.logo-text span {
+    font-size: 1.75rem;
+}
+
+.address-note,
+.logo-text small {
+    font-size: .875rem;
+}
+
+.hero h1,
+.page-intro h1,
+.service-page h1,
+.service-detail h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.15;
+}
+
+.hero p,
+.page-intro p,
+.service-intro {
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+.service-page h2,
+.service-detail h2,
+.price-section h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.25;
+}
+
+.service-card h3,
+.why-card h3,
+.review-card h3,
+.sale-card h3,
+.faq-item h3,
+.benefit-item h3 {
+    font-size: 1.125rem;
+    line-height: 1.35;
+}
+
+.service-card p,
+.why-card p,
+.review-card p,
+.sale-card p,
+.faq-item p,
+.benefit-item p {
+    font-size: 1rem;
+    line-height: 1.65;
+}
