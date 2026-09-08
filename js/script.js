@@ -142,6 +142,22 @@
     });
   };
 
+  const initWorkExamples = () => {
+    document.querySelectorAll('.work-examples').forEach(section => {
+      const button = section.querySelector('.work-examples-toggle');
+      const images = section.querySelectorAll('.work-example-image');
+      if (!button || !images.length || button.dataset.ready) return;
+
+      button.dataset.ready = 'true';
+      button.addEventListener('click', () => {
+        const isShown = section.classList.toggle('is-visible');
+        images.forEach(image => image.classList.toggle('is-blurred', !isShown));
+        button.setAttribute('aria-expanded', String(isShown));
+        button.textContent = isShown ? 'Скрыть' : 'Показать';
+      });
+    });
+  };
+
   const improveAccessibilityAndMedia = () => {
     document.querySelectorAll('.socials a').forEach(link => {
       if (link.getAttribute('aria-label')) return;
@@ -209,6 +225,7 @@
     initAccordions();
     initMobileNavigation();
     improveForms();
+    initWorkExamples();
     improveAccessibilityAndMedia();
     initCookieNotice();
   };
