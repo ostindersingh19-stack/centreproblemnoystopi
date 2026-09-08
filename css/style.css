@@ -2387,8 +2387,8 @@ select,
     transition: filter 280ms ease, transform 280ms ease;
 }
 
-.work-example-image.is-blurred {
-    filter: blur(18px);
+.work-examples .work-example-image.is-blurred {
+    filter: blur(24px) !important;
     transform: scale(1.08);
 }
 
