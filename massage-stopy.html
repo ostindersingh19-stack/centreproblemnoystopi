@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Центр заботы</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/services/center-care-logo.png" alt="Центр заботы" loading="lazy" decoding="async">
+                    Центр заботы
+                </a>
+            </div>
+
+            <div class="header-info">
+                <div class="contact-item">
+                    <span class="contact-title">Адрес</span>
+                    <span>Нижний Новгород, Казанское ш., 9</span>
+                    <span class="address-note">(вход со стороны шоссе)</span>
+                </div>
+
+                <div class="contact-item">
+                    <span class="contact-title">Телефон</span>
+                    <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+                </div>
+
+                <div class="socials">
+                    <a href="https://t.me/username" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                        <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="https://vk.com/podolog_blog_nn" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
+                        <i class="fa-brands fa-vk" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <a href="https://n782223.yclients.com" target="_blank" rel="noopener noreferrer" class="btn-header">
+                    Онлайн запись
+                </a>
+            </div>
+        </div>
+
+        <nav class="nav" id="site-navigation" aria-label="Основная навигация">
+            <a href="index.html" data-page="index.html">Главная</a>
+            <a href="about.html" data-page="about.html">О нас</a>
+            <a href="prices.html" data-page="prices.html">Цены</a>
+            <a href="sales.html" data-page="sales.html">Акции</a>
+            <a href="contacts.html" data-page="contacts.html">Контакты</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span>/</span><a href="massage.html">Массаж</a><span>/</span><span>Массаж стоп</span></nav>
+    <section class="service-page service-detail">
+        <h1>Массаж стоп</h1>
+        <p class="service-intro">Стопы ежедневно испытывают значительную нагрузку. Длительная ходьба, работа на ногах, физическая активность и неудобная обувь могут приводить к ощущению усталости и напряжения.</p>
+        <p>Массаж стоп — это приятная процедура, направленная на расслабление и восстановление ощущения комфорта после повседневных нагрузок.</p>
+
+        <h2>Что даёт массаж стоп</h2>
+        <p>Во время процедуры специалист последовательно прорабатывает стопы, подбирая интенсивность воздействия индивидуально.</p>
+        <p>Массаж помогает:</p>
+        <ul class="service-list">
+            <li><strong>Снять усталость и тяжесть в ногах</strong> после рабочего дня, долгой ходьбы или интенсивных тренировок.</li>
+            <li><strong>Улучшить кровообращение и лимфоотток</strong>, что помогает уменьшить отёки.</li>
+            <li><strong>Расслабить мышцы</strong>, снять спазмы и болевые ощущения.</li>
+            <li><strong>Провести профилактику проблем со стопами</strong> (плоскостопия, вальгусной деформации).</li>
+            <li><strong>Поддержать при некоторых заболеваниях:</strong> артритах и артрозах мелких суставов стопы (вне обострения), пяточной шпоре, в период реабилитации после травм.</li>
+            <li><strong>Улучшить общее самочувствие:</strong> стимуляция рефлекторных точек может помочь при стрессе, бессоннице и головной боли.</li>
+        </ul>
+        <p>Интенсивность массажа подбирается с учётом чувствительности и пожеланий клиента.</p>
+
+        <h2>Когда особенно приятно сделать массаж стоп</h2>
+        <p>Процедура хорошо подходит после длительной ходьбы, рабочего дня на ногах, физических нагрузок или просто в качестве расслабляющего ухода.</p>
+        <p>Массаж стоп можно выбрать как отдельную процедуру или дополнение к другим видам ухода за стопами.</p>
+
+        <div class="back-wrapper"><a href="massage.html" class="back-btn">← Вернуться к массажу</a></div>
+    </section>
+    <section class="cta">
+    <div class="cta-box">
+        <h2>Запишитесь на приём</h2>
+        <p>Оставьте заявку — мы свяжемся с вами и подберём удобное время.</p>
+
+        <form class="cta-form" action="https://formsubmit.co/podolog.nn@mail.ru" method="POST">
+            <input type="hidden" name="_subject" value="Новая заявка с сайта «Центр заботы»">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+            <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required>
+            <button type="submit">Оставить заявку</button>
+            <p class="cta-status" role="status" aria-live="polite"></p>
+        </form>
+    </div>
+</section>
+</main>
+<footer class="footer">
+    <p class="site-disclaimer">Материалы, размещенные на данной странице, носят информационный характер и предназначены для ознакомительных целей. Услуга не является медицинской.</p>
+    <p>© 2026 Центр заботы</p>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
