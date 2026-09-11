@@ -404,6 +404,10 @@ main.container > .breadcrumbs {
   text-align: center;
 }
 
+.service-title-centered {
+  text-align: center;
+}
+
 .service-inline-lead {
   margin-inline: auto;
   text-align: center;
@@ -413,6 +417,7 @@ main.container > .breadcrumbs {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 42px;
   row-gap: 10px;
+  padding-inline: clamp(42px, 6vw, 96px);
 }
 
 .service-inline-image img {
@@ -532,6 +537,7 @@ main.container > .breadcrumbs {
 
   .service-list--two-columns {
     grid-template-columns: 1fr;
+    padding-inline: 1.3rem;
   }
 
   .service-inline-image-grid .service-inline-image {
